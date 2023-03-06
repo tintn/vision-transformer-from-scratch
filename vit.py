@@ -33,7 +33,7 @@ class PatchEmbeddings(nn.Module):
         self.projection = nn.Conv2d(self.num_channels, self.hidden_size, kernel_size=self.patch_size, stride=self.patch_size)
 
     def forward(self, x):
-        # (batch_size, num_channels, image_size, image_size) -> (batch_size, hidden_size, num_patches)
+        # (batch_size, num_channels, image_size, image_size) -> (batch_size, num_patches, hidden_size)
         x = self.projection(x)
         x = x.flatten(2).transpose(1, 2)
         return x
