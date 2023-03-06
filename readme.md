@@ -34,6 +34,9 @@ config = {
     "qkv_bias": True,
 }
 ```
+
+The model is much smaller than the original ViT models from the paper (which has at least 12 layers and hidden size of 768) as I just want to illustrate how the model works rather than achieving state-of-the-art performance.
+
 These are some results of the model:
 
 ![](/assets/metrics.png)
