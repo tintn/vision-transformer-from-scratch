@@ -49,7 +49,8 @@ class Embeddings(nn.Module):
         self.config = config
         self.patch_embeddings = PatchEmbeddings(config)
         # Create a learnable [CLS] token
-        # Similar to BERT, the [CLS] token is used to aggregate the final hidden state of the input sequence
+        # Similar to BERT, the [CLS] token is added to the beginning of the input sequence
+        # and is used to classify the entire sequence
         self.cls_token = nn.Parameter(torch.randn(1, 1, config["hidden_size"]))
         # Create position embeddings for the [CLS] token and the patch embeddings
         # Add 1 to the sequence length for the [CLS] token
@@ -97,7 +98,7 @@ class AttentionHead(nn.Module):
         key = self.key(x)
         value = self.value(x)
         # Calculate the attention scores
-        # softmax(QK^T/sqrt(head_size))*V
+        # softmax(Q*K.T/sqrt(head_size))*V
         attention_scores = torch.matmul(query, key.transpose(-1, -2))
         attention_scores = attention_scores / math.sqrt(self.attention_head_size)
         attention_probs = nn.functional.softmax(attention_scores, dim=-1)
