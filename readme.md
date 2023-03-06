@@ -39,7 +39,7 @@ These are some results of the model:
 ![](/assets/metrics.png)
 *Train loss, test loss and accuracy of the model during training.*
 
-The performance of the model is not great compared to the original paper as I used a much smaller model. The model was able to achieve 75.5% accuracy on the test set after 100 epochs of training.
+The model was able to achieve 75.5% accuracy on the test set after 100 epochs of training.
 
 ![](/assets/attention.png)
 *Attention maps of the model for different testing images*
