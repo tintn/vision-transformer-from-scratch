@@ -1,6 +1,6 @@
 # Vision Transformer from Scratch
 
-This is a simplified PyTorch implementation of the paper [An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale](https://arxiv.org/abs/2010.11929). The code is heavily based on the [Huggingface implementation](https://github.com/huggingface/transformers/blob/main/src/transformers/models/vit/modeling_vit.py) of the paper. The goal of this project is to provide a simple and easy-to-understand implementation of the paper. The code is not optimized for speed and is not intended to be used for production.
+This is a simplified PyTorch implementation of the paper [An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale](https://arxiv.org/abs/2010.11929). The code is heavily based on the [Huggingface implementation](https://github.com/huggingface/transformers/blob/main/src/transformers/models/vit/modeling_vit.py). The goal of this project is to provide a simple and easy-to-understand implementation. The code is not optimized for speed and is not intended to be used for production.
 
 ## Usage
 
