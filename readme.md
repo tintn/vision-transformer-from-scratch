@@ -16,7 +16,7 @@ Please have a look at the `train.py` file for more details.
 
 ## Results
 
-The model was trained on the CIFAR-10 dataset for 100 epochs with a batch size of 256. The learning rate was set to 0.01 and no learning rate scheduling was used. The model config was used to train the model:
+The model was trained on the CIFAR-10 dataset for 100 epochs with a batch size of 256. The learning rate was set to 0.01 and no learning rate schedule was used. The model config was used to train the model:
 
 ```python
 config = {
