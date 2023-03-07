@@ -45,9 +45,9 @@ These are some results of the model:
 The model was able to achieve 75.5% accuracy on the test set after 100 epochs of training.
 
 ![](/assets/attention.png)
-*Attention maps of the model for different testing images*
+*Attention maps of the model for different test images*
 
-You can see that the model's attentions are able to capture the objects from different classes pretty well. It've learned to focus on the objects and ignore the background.
+You can see that the model's attentions are able to capture the objects from different classes pretty well. It learned to focus on the objects and ignore the background.
 
 These visualizations are generated using the notebook `inspect.ipynb`.
 
