@@ -177,7 +177,7 @@ class FasterMultiHeadAttention(nn.Module):
         self.output_projection = nn.Linear(self.all_head_size, self.hidden_size)
         self.output_dropout = nn.Dropout(config["hidden_dropout_prob"])
 
-    def forward(self, x):
+    def forward(self, x, output_attentions=False):
         # Project the query, key, and value
         # (batch_size, sequence_length, hidden_size) -> (batch_size, sequence_length, all_head_size * 3)
         qkv = self.qkv_projection(x)
@@ -197,10 +197,20 @@ class FasterMultiHeadAttention(nn.Module):
         attention_probs = self.attn_dropout(attention_probs)
         # Calculate the attention output
         attention_output = torch.matmul(attention_probs, value)
+        # Resize the attention output
+        # from (batch_size, num_attention_heads, sequence_length, attention_head_size)
+        # To (batch_size, sequence_length, all_head_size)
+        attention_output = attention_output.transpose(1, 2) \
+                                           .contiguous() \
+                                           .view(batch_size, sequence_length, self.all_head_size)
         # Project the attention output back to the hidden size
         attention_output = self.output_projection(attention_output)
         attention_output = self.output_dropout(attention_output)
-        return (attention_output, attention_probs)
+        # Return the attention output and the attention probabilities (optional)
+        if not output_attentions:
+            return (attention_output, None)
+        else:
+            return (attention_output, attention_probs)
 
 
 class MLP(nn.Module):
