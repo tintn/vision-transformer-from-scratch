@@ -6,7 +6,7 @@ Check out [this post](https://medium.com/towards-data-science/implementing-visio
 
 ## Usage
 
-Dependencies used for this project:
+Dependencies:
 - PyTorch 1.13.1 ([install instructions](https://pytorch.org/get-started/locally/))
 - torchvision 0.14.1 ([install instructions](https://pytorch.org/get-started/locally/))
 - matplotlib 3.7.1 to generate plots for model inspection
