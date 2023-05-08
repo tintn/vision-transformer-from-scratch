@@ -319,7 +319,7 @@ class ViTForClassfication(nn.Module):
         # Calculate the encoder's output
         encoder_output, all_attentions = self.encoder(embedding_output, output_attentions=output_attentions)
         # Calculate the logits, take the [CLS] token's output as features for classification
-        logits = self.classifier(encoder_output[:, 0])
+        logits = self.classifier(encoder_output[:, 0, :])
         # Return the logits and the attention probabilities (optional)
         if not output_attentions:
             return (logits, None)
