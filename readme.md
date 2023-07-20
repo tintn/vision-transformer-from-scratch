@@ -1,4 +1,4 @@
-# Vision Transformer from Scratch
+# Vision Transformer from Scratch [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/10AYlqsACfMiuMiMSVQjcW8NnkGiJrHLh?usp=sharing)
 
 This is a simplified PyTorch implementation of the paper [An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale](https://arxiv.org/abs/2010.11929). The goal of this project is to provide a simple and easy-to-understand implementation. The code is not optimized for speed and is not intended to be used for production.
 
